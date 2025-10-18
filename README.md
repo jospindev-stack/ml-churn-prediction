@@ -7,46 +7,35 @@ Il est conçu comme un projet ML complet pour montrer des compétences en prétr
 
 ## Structure du projet
 
+```
 ml-churn-prediction/
+├── data/                         # Données brutes et nettoyées
+│   └── WA*Fn-UseC*-Telco-Customer-Churn.csv
 │
-├── data/ # Dataset
-│ └── WA*Fn-UseC*-Telco-Customer-Churn.csv
+├── notebooks/                   # Notebooks d'analyse et d'entraînement
+│   ├── 01_exploration.ipynb         # Analyse exploratoire, visualisations
+│   └── 02_model_training.ipynb      # Prétraitement, entraînement, évaluation
 │
-├── notebooks/ # Notebooks pour exploration et entraînement
-│ ├── 01_exploration.ipynb # Analyse exploratoire et nettoyage
-│ └── 02_model_training.ipynb # Prétraitement, entraînement, évaluation
+├── src/                         # Fonctions Python modulaires
+│   ├── preprocess.py                # Chargement, nettoyage, encodage
+│   ├── train_model.py               # Entraînement et sauvegarde des modèles
+│   └── evaluate.py                  # Métriques et visualisations d'évaluation
 │
-├── src/ # Fonctions utilitaires
-│ ├── preprocess.py # Fonctions de prétraitement
-│ ├── train_model.py # Fonctions pour entraîner et sauvegarder les modèles
-│ └── evaluate.py # Fonctions pour évaluer les modèles
+├── model/                       # Objets sauvegardés pour déploiement
+│   ├── churn_model.pkl              # Modèle Random Forest
+│   ├── churn_xgb.pkl                # Modèle XGBoost (optionnel)
+│   ├── churn_pipeline.pkl          # Pipeline complet (prétraitement + modèle)
+│   ├── feature_columns.pkl          # Liste des colonnes utilisées
+│   ├── scaler.pkl                   # Scaler pour les variables numériques
+│   ├── le_<col>.pkl                 # Encoders LabelEncoder pour chaque variable catégorielle
 │
-├── model/ # Objets sauvegardés pour déploiement
-│ ├── churn_model.pkl # Modèle Random Forest entraîné
-│ ├── churn_xgb.pkl # Modèle XGBoost entraîné (optionnel)
-│ ├── feature_columns.pkl # Colonnes/features utilisées à l'entraînement
-│ ├── scaler.pkl # Scaler pour les colonnes numériques
-│ ├── le_gender.pkl # Encoders pour toutes les colonnes catégorielles
-│ ├── le_Partner.pkl
-│ ├── le_Dependents.pkl
-│ ├── le_PhoneService.pkl
-│ ├── le_MultipleLines.pkl
-│ ├── le_InternetService.pkl
-│ ├── le_OnlineSecurity.pkl
-│ ├── le_OnlineBackup.pkl
-│ ├── le_DeviceProtection.pkl
-│ ├── le_TechSupport.pkl
-│ ├── le_StreamingTV.pkl
-│ ├── le_StreamingMovies.pkl
-│ ├── le_Contract.pkl
-│ ├── le_PaperlessBilling.pkl
-│ └── le_PaymentMethod.pkl
+├── app/                         # Application Streamlit
+│   └── app.py                      # Interface utilisateur pour prédiction
 │
-├── app/ # Application Streamlit
-│ └── app.py # Interface pour prédire le churn
-│
-├── requirements.txt # Dépendances Python
-└── README.md # Présentation complète du projet
+├── requirements.txt             # Dépendances Python
+└── README.md                    # Présentation du projet
+
+```
 
 ---
 
@@ -75,11 +64,12 @@ venv\Scripts\activate
 # Mac/Linux
 
 source venv/bin/activate
+
 Installer les dépendances :
 
 pip install -r requirements.txt
 
-Utilisation
+# Utilisation
 
 Notebooks
 01_exploration.ipynb : Analyse exploratoire des données et nettoyage
@@ -94,7 +84,8 @@ Remplir les champs du formulaire
 
 Obtenir la prédiction et la probabilité que le client résilie son abonnement
 
-Fonctionnalités
+# Fonctionnalités
+
 Prétraitement automatique des données
 
 Encodage des variables catégorielles et standardisation des variables numériques
