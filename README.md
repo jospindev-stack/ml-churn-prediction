@@ -11,7 +11,7 @@ Il est conçu comme un projet ML complet pour montrer des compétences en prétr
 ml-churn-prediction/
 │
 ├── data/ # Dataset
-│ └── WA*Fn-UseC*-Telco-Customer-Churn.csv
+│ └── WA_Fn-UseC_-Telco-Customer-Churn.csv
 │
 ├── notebooks/ # Notebooks pour exploration et entraînement
 │ ├── 01_exploration.ipynb # Analyse exploratoire et nettoyage
