@@ -62,12 +62,14 @@ ml-churn-prediction/
 
 ## Installation
 
-1. Cloner le repository :
+Cloner le repository :
 
 git clone https://github.com/jospindev-stack/ml-churn-prediction.git
 
 cd ml-churn-prediction
+
 Créer un environnement virtuel :
+
 python -m venv venv
 
 # Windows
@@ -77,12 +79,14 @@ venv\Scripts\activate
 # Mac/Linux
 
 source venv/bin/activate
-Installer les dépendances :
+
+# Installer les dépendances
 
 pip install -r requirements.txt
 
-Utilisation
+# Utilisation
 
+```
 Notebooks
 01_exploration.ipynb : Analyse exploratoire des données et nettoyage
 
@@ -106,3 +110,4 @@ Entraînement et comparaison de deux modèles : Random Forest et XGBoost
 Évaluation complète avec accuracy, classification report et matrice de confusion
 
 Déploiement via Streamlit pour interface utilisateur
+```
